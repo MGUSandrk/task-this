@@ -14,8 +14,8 @@ export const Footer = () => {
         <div className="flex items-center gap-2">
           <span className="opacity-50">ARCHITECTED BY</span>
           <a 
-            href="https://portfolio.tuweb.com" /* Pon tu portfolio o LinkedIn aquí */
-            target="_blank" 
+            //href="https://portfolio.tuweb.com" /* Pon tu portfolio o LinkedIn aquí */
+            //target="_blank" 
             rel="noopener noreferrer"
             className="border-b border-foreground hover:bg-foreground hover:text-background transition-colors pb-0.5 font-bold"
           >
@@ -26,7 +26,7 @@ export const Footer = () => {
         {/* DERECHA: REPO & STATUS */}
         <div className="flex items-center gap-6">
           <a 
-            href="https://github.com/tu-usuario/tu-repo" 
+            href="https://github.com/MGUSandrk/task-this" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:underline decoration-1 underline-offset-4 flex items-center gap-2"
