@@ -194,7 +194,7 @@ export const Dashboard = () => {
                 className="w-full absolute pl-5 bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-lg md:text-sm placeholder:uppercase placeholder:text-lg md:placeholder:text-xs"
               />
             </div>
-            <button type="submit" className="font-bold text-xl hover:text-gray-500 px-2">+</button>
+            <button type="submit" className="md:font-bold text-4xl md:text-xl hover:text-gray-500 px-2 ">+</button>
           </form>
 
           {/* <form onSubmit={handleAddTask} className="flex gap-3 mb-8">
@@ -260,7 +260,7 @@ export const Dashboard = () => {
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">JUST DO IT</span>
            </div>
            
-           <form onSubmit={handleAddTask} className="flex gap-3 mb-5">
+           <form onSubmit={handleAddTask} className="flex gap-3 mb-2 md:mb-5">
             <div className="flex-1 relative">
                 <span className="absolute left-0.5 top-5 md:top-3.5 -translate-y-1/2 font-bold text-3xl md:text-lg opacity-50 pb-1">›</span>
                 <input 
@@ -269,7 +269,7 @@ export const Dashboard = () => {
                   onChange={e => setNewTask(e.target.value)}
                   className="w-full absolute pl-5 pb-1 bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-lg md:text-sm placeholder:uppercase placeholder:text-lg md:placeholder:text-xs"/>
             </div>
-            <button type="submit" className="font-bold text-xl hover:text-gray-500 px-2">+</button>
+            <button type="submit" className="md:font-bold text-4xl md:text-xl hover:text-gray-500 px-1">+</button>
           </form>
 
           {/* LISTA TAREAS (flex-1 para empujar el archivo abajo) */}
@@ -283,7 +283,7 @@ export const Dashboard = () => {
                   {/* Icono Tacho (Izquierda) */}
                   
 
-                  <div className="w-4 h-4 border-2 border-foreground flex-shrink-0 group-hover:bg-foreground transition-colors mt-1.5 md:mt-0" />
+                  <div className="w-4 h-4 border-2 border-foreground flex-shrink-0 group-hover:bg-foreground transition-colors mt-2 md:mt-0" />
                   <span className="flex-1 text-xl md:text-sm font-medium leading-tight pt-2 md:pt-0.5 break-words select-none ">{task.title}</span>
                   <button 
                     onClick={(e) => handleDeleteTask(task.id, e)} 
