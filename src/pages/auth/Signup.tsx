@@ -36,7 +36,6 @@ export const Signup = () => {
       if (error) throw error;
       
       // Éxito: Redirigir al login o mostrar mensaje
-      alert('Cuenta creada con éxito. Por favor verifica tu correo para activar la cuenta.');
       navigate('/login');
       
     } catch (err: any) {

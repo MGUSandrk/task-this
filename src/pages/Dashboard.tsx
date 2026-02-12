@@ -11,8 +11,6 @@ import { HabitService } from '../services/habit.service';
 import { type Habit } from '../core/types';
 
 import { Clock } from '../components/Dashboard/Clock'; // Asumo que moviste Clock a features/clock/Clock.tsx
-import { Input } from '../components/ui/Input';
-import { Button } from '../components/ui/Button';
 import { DashboardHeader } from '../components/Dashboard/DashboardHeader';
 
 export const Dashboard = () => {
