@@ -137,18 +137,21 @@ export const Dashboard = () => {
       <DashboardHeader userName={user?.user_metadata?.full_name} />
 
       {/* LAYOUT PRINCIPAL: 3 COLUMNAS ASIMÉTRICAS */}
-      <div className="flex-1 p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto w-full items-start mr-100">
+      <div className="flex-1 p-4 pt-2 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-full content-start">
         
         {/* 1. RELOJ (Focal Point - 2/3 ancho) */}
-        <div className="justify-self-center md:col-span-2 border-2 border-foreground p-8 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background flex flex-col justify-center items-center md:min-h-[280px] relative overflow-hidden group hover:-translate-y-0.5 transition-transform">
-           <div className="absolute top-0 left-0 bg-foreground text-background text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
-             System_Time
-           </div>
-           <Clock />
+        <div className="md:col-span-2 md:relative md:mr-10">
+          <div className="border-2 border-foreground px-4 shadow-[6px_6px_0px_0px_var(--foreground)] hover:-translate-y-0.5 h-35 md:h-50
+                          bg-background flex flex-col justify-center items-center overflow-hidden group transition-transform relative md:absolute md:right-2 md:bottom-2">
+            <div className="absolute top-0 left-0 bg-foreground text-background text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
+              System_Time
+            </div>
+            <Clock />
+          </div>
         </div>
 
         {/* 2. ARTE + FRASE (Decorativo - 1/3 ancho) */}
-        <div className="md:col-span-1 border-2 border-foreground h-full min-h-[280px] shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900">
+        <div className="md:col-span-1 border-2 border-foreground min-h-80 md:min-w-40 md:max-w-80 md:justi shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900 md:-mb-5 md:mt-4" >
           {/* Imagen de fondo (URL Actualizada y Backup color) */}
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
@@ -163,7 +166,7 @@ export const Dashboard = () => {
              <div className="self-end border border-background text-background px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest backdrop-blur-sm">
                Daily_Mantra
              </div>
-             <div className="text-right">
+             <div className="text-right self-end">
                <h2 className="text-3xl md:text-4xl font-black leading-[0.85] text-white drop-shadow-md">
                  LESS <br/>BUT <br/>BETTER
                </h2>
@@ -175,7 +178,7 @@ export const Dashboard = () => {
         {/* --- FILA 2 --- */}
 
        {/* 3. HÁBITOS */}
-        <div className="md:mb-30 md:ml-10 md:col-span-1 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit self-end">
+        <div className=" md:col-span-1 border-2 border-foreground p-5 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit">
           <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
              <h2 className="text-xl font-black uppercase tracking-tight">Habits</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">PLS KEEP</span>
@@ -199,12 +202,12 @@ export const Dashboard = () => {
                   key={habit.id}
                   onClick={() => handleToggleHabit(habit)}
                   className={`
-                    group cursor-pointer w-full border-2 border-foreground p-3 
+                    group cursor-pointer w-full border-2 border-foreground p-2 md:p-3 
                     flex items-center justify-between transition-all hover:translate-x-1 active:scale-[0.98]
                     ${isDone ? 'bg-foreground text-background' : 'bg-background hover:bg-grid/10'}
                   `}
                 >
-                  <span className={`font-bold text-xs uppercase tracking-wide truncate pr-2 ${isDone ? "line-through" : ""}`}>{habit.name}</span>
+                  <span className={`font-bold text-lg md:text-xs uppercase tracking-wide truncate pr-2 ${isDone ? "line-through" : ""}`}>{habit.name}</span>
                   
                   {/* CONTENEDOR DERECHO: Icono Borrar + Días + Checkbox */}
                   <div className="flex items-center gap-3 flex-shrink-0">
@@ -235,7 +238,7 @@ export const Dashboard = () => {
         </div>
 
         {/* 4. TAREAS */}
-        <div className=" md:ml-40 md:col-span-2 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background min-h-[400px] max-w-xl flex flex-col ">
+        <div className="md:col-span-2 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background min-h-87.5 flex flex-col md:w-120 md:ml-20 md:mt-10">
            <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
              <h2 className="text-xl font-black uppercase tracking-tight">Tasks</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">JUST DO IT</span>
@@ -254,12 +257,12 @@ export const Dashboard = () => {
           </form>
 
           {/* LISTA TAREAS (flex-1 para empujar el archivo abajo) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 flex-1 content-start justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 flex-1 content-start md:justify-items-center">
              {tasks.filter(t => !t.is_completed).map(task => (
                <div 
                  key={task.id} 
                  onClick={() => handleToggleTask(task)}
-                 className="group flex items-center gap-3 p-3 pr-10 sm:pr-0 border border-transparent hover:border-grid transition-all cursor-pointer hover:bg-grid/5 h-fit "
+                 className="group flex items-center gap-2 pr-9 border border-transparent hover:border-grid transition-all cursor-pointer hover:bg-grid/5 h-fit "
                >
                   {/* Icono Tacho (Izquierda) */}
                   <button 
@@ -271,7 +274,7 @@ export const Dashboard = () => {
                   </button>
 
                   <div className="w-4 h-4 border-2 border-foreground flex-shrink-0 group-hover:bg-foreground transition-colors" />
-                  <span className="flex-1 text-sm font-medium leading-tight pt-0.5 break-words select-none ">{task.title}</span>
+                  <span className="flex-1 text-xl md:text-sm font-medium leading-tight pt-2 md:pt-0.5 break-words select-none ">{task.title}</span>
                </div>
              ))}
           </div>

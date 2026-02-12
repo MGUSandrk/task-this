@@ -15,15 +15,14 @@ export const DashboardHeader = ({ userName }: HeaderProps) => {
   };
 
   return (
-    // HEADER FINO: py-3 en lugar de p-6
-    <header className="w-full flex justify-between items-center border-b-2 border-foreground bg-background py-3 px-6 select-none">
+    <header className="w-full flex justify-between items-center border-b-2 border-foreground bg-background py-1 md:py-2 px-2 md:px-6 select-none">
       
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
         {/* Logo más compacto */}
-        <div className="font-black text-lg tracking-tighter uppercase border border-foreground px-2">
+        <div className="font-black text-lg tracking-tighter uppercase border-2 border-foreground px-1 md:px-2">
           TASK THIS.
         </div>
-        <span className="font-mono text-md md:text-[10px] uppercase opacity-60 mt-1">
+        <span className="font-mono text-sm md:text-[13px] uppercase opacity-60 mt-1">
           {userName || 'GHOST'}
         </span>
       </div>
