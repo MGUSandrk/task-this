@@ -137,7 +137,7 @@ export const Dashboard = () => {
       <DashboardHeader userName={user?.user_metadata?.full_name} />
 
       {/* LAYOUT PRINCIPAL: 3 COLUMNAS ASIMÉTRICAS */}
-      <div className="flex-1 p-4 pt-2 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-full content-start">
+      <div className="flex-1 px-2 md:p-4 py-2 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-full content-start">
         
         {/* 1. RELOJ (Focal Point - 2/3 ancho) */}
         <div className="md:col-span-2 md:relative md:mr-5 md:mb-8 ">
@@ -231,8 +231,8 @@ export const Dashboard = () => {
                     <button 
                       onClick={(e) => handleDeleteHabit(habit.id, e)}
                       className={`
-                        opacity-0 group-hover:opacity-100 transition-opacity p-1
-                        ${isDone ? 'text-background hover:text-gray-300' : 'text-gray-400 hover:text-foreground'}
+                        md:opacity-0 group-hover:opacity-100 transition-opacity p-1
+                        text-gray-400 hover:text-foreground
                       `}
                       title="Borrar Hábito"
                     >
@@ -253,7 +253,7 @@ export const Dashboard = () => {
         </div>
 
         {/* 4. TAREAS */}
-        <div className="md:col-span-2 border-2 border-foreground px-6 pt-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background flex flex-col 
+        <div className="md:col-span-2 border-2 border-foreground px-6 pt-5 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background flex flex-col 
                         md:w-120 md:ml-20 md:mt-10 md:flex-1 md:relative h-fit md:min-h-70">
            <div className="flex justify-between items-end mb-3 border-b-2 border-foreground pb-2">
              <h2 className="text-3xl md:text-xl font-black uppercase tracking-tight">Tasks</h2>
@@ -278,21 +278,24 @@ export const Dashboard = () => {
                <div 
                  key={task.id} 
                  onClick={() => handleToggleTask(task)}
-                 className="group flex items-center gap-2 pr-9 border border-transparent hover:border-grid transition-all cursor-pointer hover:bg-grid/5 h-fit "
+                 className="group flex items-center gap-2 border border-transparent hover:border-grid transition-all cursor-pointer hover:bg-grid/5 h-fit "
                >
                   {/* Icono Tacho (Izquierda) */}
+                  
+
+                  <div className="w-4 h-4 border-2 border-foreground flex-shrink-0 group-hover:bg-foreground transition-colors mt-1.5 md:mt-0" />
+                  <span className="flex-1 text-xl md:text-sm font-medium leading-tight pt-2 md:pt-0.5 break-words select-none ">{task.title}</span>
                   <button 
                     onClick={(e) => handleDeleteTask(task.id, e)} 
-                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-gray-400 hover:text-foreground"
+                    className="md:opacity-0 group-hover:opacity-100 transition-opacity pr-2 text-gray-400 hover:text-foreground mt-1.5 md:mt-0"
                     title="Borrar"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                   </button>
-
-                  <div className="w-4 h-4 border-2 border-foreground flex-shrink-0 group-hover:bg-foreground transition-colors" />
-                  <span className="flex-1 text-xl md:text-sm font-medium leading-tight pt-2 md:pt-0.5 break-words select-none ">{task.title}</span>
                </div>
+               
              ))}
+             
           </div>
 
           {tasks.filter(t => !t.is_completed).length === 0 && (
