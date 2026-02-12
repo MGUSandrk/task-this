@@ -175,7 +175,7 @@ export const Dashboard = () => {
         {/* --- FILA 2 --- */}
 
        {/* 3. HÁBITOS */}
-        <div className="mx-10 md:mb-30 md:ml-10 md:col-span-1 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit self-end">
+        <div className="md:mb-30 md:ml-10 md:col-span-1 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit self-end">
           <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
              <h2 className="text-xl font-black uppercase tracking-tight">Habits</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">PLS KEEP</span>
@@ -235,7 +235,7 @@ export const Dashboard = () => {
         </div>
 
         {/* 4. TAREAS */}
-        <div className="mx-10 md:ml-40 md:col-span-2 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background min-h-[400px] max-w-xl flex flex-col ">
+        <div className=" md:ml-40 md:col-span-2 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background min-h-[400px] max-w-xl flex flex-col ">
            <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
              <h2 className="text-xl font-black uppercase tracking-tight">Tasks</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">JUST DO IT</span>
