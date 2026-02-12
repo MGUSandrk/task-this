@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  /* PALETA MONOCROMÁTICA SWISS STYLE */
+  --background: #F5F5F0;  /* Blanco Hueso / Off-White */
+  --foreground: #121212;  /* Negro Tinta */
+  --grid-color: #D4D4D4;  /* Gris medio para la cuadrícula */
+  
+  /* Acento (Opcional, para estados activos) */
+  --accent: #FF4D4D;      /* Rojo Suizo */
+}
+
+/* MODO OSCURO (Se activa si agregas la clase 'dark' al html/body) */
+.dark {
+  --background: #0A0A0A;
+  --foreground: #E5E5E5;
+  --grid-color: #262626;
+  --accent: #FF4D4D;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* Fuente técnica estilo máquina de escribir o sistema */
+  font-family: 'JetBrains Mono', 'Courier New', monospace; 
+  -webkit-font-smoothing: antialiased;
+}
+
+/* PATRÓN MATEMÁTICO DE CUADRÍCULA */
+.bg-grid-pattern {
+  /* Define el tamaño del cuadrado */
+  background-size: 40px 40px; 
+  
+  /* Dibuja las líneas usando gradientes lineales de 1px */
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    
+  /* Alineación perfecta al top-center */
+  background-position: center top;
+}
