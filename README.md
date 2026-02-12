@@ -31,8 +31,6 @@ El proyecto fue construido utilizando tecnologías modernas, priorizando el rend
 * **[TypeScript](https://www.typescriptlang.org/):** Para un código robusto y tipado estático.
 * **[Tailwind CSS](https://tailwindcss.com/):** Framework de utilidad para el diseño brutalista y sistema de grillas.
 * **[React Router](https://reactrouter.com/):** Gestión de rutas y navegación SPA.
-* **[React Helmet Async](https://github.com/staylor/react-helmet-async):** Gestión de SEO dinámico y metaetiquetas.
-
 ### Backend & Servicios
 * **[Supabase](https://supabase.com/):** Backend-as-a-Service (BaaS).
     * **Auth:** Autenticación segura de usuarios.
