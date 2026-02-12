@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
-import { Footer } from '../components/layouts/Footer';
+import { Footer } from '../components/Footer';
 
 export const Landing = () => {
   const navigate = useNavigate();

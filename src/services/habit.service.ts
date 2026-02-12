@@ -22,10 +22,10 @@ export const HabitService = {
   }
   ,
 
-  create: async (name: string, userId: string) => {
+  create: async (name: string) => {
     const { data, error } = await supabase
       .from('habits')
-      .insert([{ name, user_id: userId }])
+      .insert([{ name }])
       .select()
       .single();
       

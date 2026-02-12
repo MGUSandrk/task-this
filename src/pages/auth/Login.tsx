@@ -13,7 +13,7 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -26,6 +26,7 @@ export const Login = () => {
       setError(err.message); // Sugerencia: "Credenciales inválidas"
     } finally {
       setLoading(false);
+      navigate("/app")
     }
   };
 

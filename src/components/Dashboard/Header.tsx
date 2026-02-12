@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/auth.service';
-import { Button } from '../ui/Button';
 
 interface HeaderProps {
   userName: string | null;
@@ -27,13 +26,17 @@ export const DashboardHeader = ({ userName }: HeaderProps) => {
         </span>
       </div>
 
-      <Button 
-        variant="outline" 
+      <button
         onClick={handleLogout}
-        className="py-1 px-3 text-[10px] h-auto border-foreground hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-colors uppercase tracking-widest"
+        className="bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background 
+         hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-colors uppercase tracking-widest
+         p-1"
       >
-        Salir
-      </Button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>
+
+      </button>
     </header>
   );
 };

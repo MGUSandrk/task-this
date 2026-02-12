@@ -12,10 +12,10 @@ export const TaskService = {
     return data as Task[];
   },
 
-  create: async (title: string, userId: string) => {
+  create: async (title: string) => {
     const { data, error } = await supabase
       .from('tasks')
-      .insert([{ title, user_id: userId }])
+      .insert([{ title}])
       .select()
       .single();
       

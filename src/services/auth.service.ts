@@ -18,6 +18,8 @@ export const AuthService = {
 
   getSession: async () => await supabase.auth.getSession(),
 
+  getUser: async () => await supabase.auth.getUser(),
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onAuthStateChange: (callback: any) => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => callback(session));
