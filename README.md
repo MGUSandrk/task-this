@@ -1,7 +1,6 @@
 # TASK THIS.
 
 > **App WEB para trackear tu vida. https://taskthisxd.vercel.app/**
-> Sin distracciones. Sin adornos innecesarios. Solo foco.
 
 ![Project Banner](https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop)
 
