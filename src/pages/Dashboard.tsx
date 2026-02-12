@@ -127,7 +127,7 @@ export const Dashboard = () => {
       loadData(); // Revertir si falla
     }
   };
-
+  
   // --- RENDER ---
   if (loading) return <div className="min-h-screen flex items-center justify-center font-mono uppercase tracking-widest animate-pulse">Cargando Sistema...</div>;
 
@@ -140,8 +140,8 @@ export const Dashboard = () => {
       <div className="flex-1 p-4 pt-2 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-full content-start">
         
         {/* 1. RELOJ (Focal Point - 2/3 ancho) */}
-        <div className="md:col-span-2 md:relative md:mr-10">
-          <div className="border-2 border-foreground px-4 shadow-[6px_6px_0px_0px_var(--foreground)] hover:-translate-y-0.5 h-35 md:h-50
+        <div className="md:col-span-2 md:relative md:mr-5 md:mb-8 ">
+          <div className="border-2 border-foreground px-4 shadow-[6px_6px_0px_0px_var(--foreground)] h-35 md:h-45
                           bg-background flex flex-col justify-center items-center overflow-hidden group transition-transform relative md:absolute md:right-2 md:bottom-2">
             <div className="absolute top-0 left-0 bg-foreground text-background text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
               System_Time
@@ -179,20 +179,35 @@ export const Dashboard = () => {
 
        {/* 3. HÁBITOS */}
         <div className=" md:col-span-1 border-2 border-foreground p-5 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit">
-          <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
-             <h2 className="text-xl font-black uppercase tracking-tight">Habits</h2>
+          <div className="flex justify-between items-end mb-3 border-b-2 border-foreground pb-2">
+             <h2 className="text-3xl md:text-xl font-black uppercase tracking-tight">Habits</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">PLS KEEP</span>
            </div>
 
-          <form onSubmit={handleAddHabit} className="flex gap-2 mb-6">
-            <input 
-              placeholder="Nuevo Hábito..." 
-              value={newHabit} 
-              onChange={e => setNewHabit(e.target.value)}
-              className="w-full bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-sm placeholder:uppercase placeholder:text-xs"
-            />
+          <form onSubmit={handleAddHabit} className="flex gap-3 mb-5">
+            <div className="flex-1 relative">
+              <span className="absolute left-0.5 top-5 md:top-3.5 -translate-y-1/2 font-bold text-3xl md:text-lg opacity-50 pb-1">›</span>
+              <input 
+                placeholder="Nuevo Hábito..." 
+                value={newHabit} 
+                onChange={e => setNewHabit(e.target.value)}
+                className="w-full absolute pl-5 bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-lg md:text-sm placeholder:uppercase placeholder:text-lg md:placeholder:text-xs"
+              />
+            </div>
             <button type="submit" className="font-bold text-xl hover:text-gray-500 px-2">+</button>
           </form>
+
+          {/* <form onSubmit={handleAddTask} className="flex gap-3 mb-8">
+            <div className="flex-1 relative">
+                <span className="absolute left-0.5 top-5 md:top-3.5 -translate-y-1/2 font-bold text-3xl md:text-lg opacity-50 pb-1">›</span>
+                <input 
+                  placeholder="Nueva misión..." 
+                  value={newTask} 
+                  onChange={e => setNewTask(e.target.value)}
+                  className="w-full absolute pl-5 pb-1 bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-lg md:text-sm placeholder:uppercase placeholder:text-lg md:placeholder:text-xs"/>
+            </div>
+            <button type="submit" className="font-bold text-xl hover:text-gray-500 px-2">+</button>
+          </form> */}
 
           <div className="flex flex-col gap-3">
             {habits.map(habit => {
@@ -238,26 +253,27 @@ export const Dashboard = () => {
         </div>
 
         {/* 4. TAREAS */}
-        <div className="md:col-span-2 border-2 border-foreground p-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background min-h-87.5 flex flex-col md:w-120 md:ml-20 md:mt-10">
-           <div className="flex justify-between items-end mb-6 border-b-2 border-foreground pb-2">
-             <h2 className="text-xl font-black uppercase tracking-tight">Tasks</h2>
+        <div className="md:col-span-2 border-2 border-foreground px-6 pt-6 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background flex flex-col 
+                        md:w-120 md:ml-20 md:mt-10 md:flex-1 md:relative h-fit md:min-h-70">
+           <div className="flex justify-between items-end mb-3 border-b-2 border-foreground pb-2">
+             <h2 className="text-3xl md:text-xl font-black uppercase tracking-tight">Tasks</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">JUST DO IT</span>
            </div>
            
-           <form onSubmit={handleAddTask} className="flex gap-3 mb-8">
+           <form onSubmit={handleAddTask} className="flex gap-3 mb-5">
             <div className="flex-1 relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 font-bold text-lg opacity-50 pb-1">›</span>
+                <span className="absolute left-0.5 top-5 md:top-3.5 -translate-y-1/2 font-bold text-3xl md:text-lg opacity-50 pb-1">›</span>
                 <input 
                   placeholder="Nueva misión..." 
                   value={newTask} 
                   onChange={e => setNewTask(e.target.value)}
-                  className="w-full bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-sm placeholder:uppercase placeholder:text-xs"/>
+                  className="w-full absolute pl-5 pb-1 bg-transparent border-b-2 border-grid focus:border-foreground p-1 font-mono outline-none text-lg md:text-sm placeholder:uppercase placeholder:text-lg md:placeholder:text-xs"/>
             </div>
             <button type="submit" className="font-bold text-xl hover:text-gray-500 px-2">+</button>
           </form>
 
           {/* LISTA TAREAS (flex-1 para empujar el archivo abajo) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 flex-1 content-start md:justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 flex-1 md:justify-items-center pb-2">
              {tasks.filter(t => !t.is_completed).map(task => (
                <div 
                  key={task.id} 
@@ -287,14 +303,14 @@ export const Dashboard = () => {
 
           {/* ARCHIVO (Siempre abajo gracias a flex-col + mt-auto en el padre) */}
           {tasks.some(t => t.is_completed) && (
-            <div className="mt-auto border-t border-grid pt-4 opacity-50 hover:opacity-100 transition-opacity">
-              <p className="text-[10px] font-bold uppercase mb-2">Archivo (Click para restaurar)</p>
+            <div className="mt-auto border-t border-grid pt-2 opacity-50 hover:opacity-100 transition-opacity pb-2 flex-col">
+              <p className="text-[10px] font-bold uppercase mb-1">Historial (Click para restaurar)</p>
               <div className="flex flex-wrap gap-2">
                 {tasks.filter(t => t.is_completed).map(task => (
                   <button
                     key={task.id}
                     onClick={() => handleToggleTask(task)}
-                    className="text-xs font-mono line-through decoration-1 hover:no-underline hover:font-bold border border-transparent hover:border-foreground px-2 py-1 transition-all"
+                    className="text-lg md:text-xs font-mono line-through decoration-1 hover:no-underline hover:font-bold border border-transparent hover:border-foreground px-2 transition-all"
                   >
                     {task.title}
                   </button>

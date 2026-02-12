@@ -24,11 +24,11 @@ export const Clock = () => {
   }).toUpperCase();
 
   return (
-    <div className="flex flex-col items-center justify-center py-2 border-b-2 border-grid select-none">
+    <div className="flex flex-col items-center justify-center py-1 border-b-2 border-grid select-none">
       <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none font-mono">
         {timeString}
       </h1>
-      <p className="mt-2 text-sm md:text-base tracking-[0.2em] font-mono text-gray-500">
+      <p className=" text-sm md:text-base tracking-[0.2em] font-mono text-gray-500">
         {dateString}
       </p>
     </div>
