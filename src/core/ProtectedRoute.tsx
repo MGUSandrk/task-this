@@ -1,16 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { AuthService } from '../services/auth.service';
+import type { Session } from '@supabase/supabase-js';
 
 export const ProtectedRoute = () => {
-  const [isAllowed, setIsAllowed] = useState<boolean | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // 1. Verificar sesión actual al montar (Recuperar al refrescar F5)
     AuthService.getSession().then(({ data: { session } }) => {
-          setIsAllowed(!!session)
-          setLoading(false);
-        });
+      setSession(session);
+      setLoading(false);
+    });
+
+    // 2. Escuchar cambios (Por si se loguea en otra pestaña o se le vence el token)
+    const subscription = AuthService.onAuthStateChange(() => {
+      setSession(session);
+      setLoading(false);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   // ESTADO DE CARGA:
@@ -22,5 +32,5 @@ export const ProtectedRoute = () => {
     );
   }
 
-  return isAllowed ? <Outlet /> : <Navigate to="/login" replace/>;
+  return session ? <Outlet /> : <Navigate to="/login" replace/>;
 };
