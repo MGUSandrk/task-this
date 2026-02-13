@@ -1,7 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" fill="#121212"/>
   
-  <rect x="56" y="56" width="400" height="400" fill="#121212"/>
+  <rect x="106" y="106" width="300" height="300" fill="#121212"/>
   
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="280" fill="#F5F5F0" dy="15">T⊥</text>
+  <text 
+    x="35%" 
+    y="50%" 
+    dominant-baseline="middle" 
+    text-anchor="middle" 
+    font-family="monospace" 
+    font-weight="bold" 
+    font-size="300" 
+    fill="#F5F5F0" 
+    dy="15"
+  >T</text>
+
+  <text 
+    x="65%" 
+    y="48%" 
+    dominant-baseline="middle" 
+    text-anchor="middle" 
+    font-family="monospace" 
+    font-weight="bold" 
+    font-size="300" 
+    fill="#F5F5F0" 
+    dy="15"
+    style="transform-box: fill-box; transform-origin: center; transform: rotate(180deg);"
+  >T</text>
 </svg>
