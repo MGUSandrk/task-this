@@ -51,7 +51,7 @@ const [newHabit, setNewHabit] = useState('')
      } catch (e) {loadData()}}
 
   // Helper interno (o impórtalo de tus utils si es compartido)
-  const getTodayStr = () => new Date().toISOString().split('T')[0];
+  const getTodayStr = () => new Date().toLocaleDateString('sv-SE').split('T')[0];
 
   return (
     <div className={`border-2 border-foreground p-5 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background h-fit ${className}`}>
