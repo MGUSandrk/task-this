@@ -40,7 +40,7 @@ export const Landing = () => {
       {/* SECCIÓN DERECHA: VISUAL/PREVIEW */}
       <div className="flex-1 w-full max-w-md md:max-w-full flex justify-center">
         {/* Tarjeta decorativa estilo 'Swiss Design' */}
-        <div className="relative w-full aspect-square max-w-md border-1 bg-foreground text-background p-8 flex flex-col justify-between shadow-[20px_20px_0px_0px_rgba(100,100,100,0.2)]">
+        <div className="relative w-full aspect-square max-w-md border-1 bg-foreground text-background p-8 flex flex-col justify-between shadow-[15px_15px_0px_0px_rgba(100,100,100,0.2)]">
           <div className="border-b border-background/20 pb-4">
             <h3 className="text-4xl font-mono">01</h3>
             <p className="text-sm tracking-widest opacity-70">v1.0 BETA</p>
