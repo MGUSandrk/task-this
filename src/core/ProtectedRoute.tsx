@@ -36,5 +36,5 @@ export const ProtectedRoute = () => {
     );
   }
 
-  return session ? <Outlet /> : <Navigate to="/login" replace/>;
+  return session ? <Outlet /> : <Navigate to="/" replace/>;
 };
