@@ -7,7 +7,15 @@ if (!supabaseUrl || !supabaseKey) {
   throw new Error('Faltan las variables de entorno de Supabase');
 }
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey,{
+  auth: {
+    storage: window.localStorage, 
+    autoRefreshToken: true,      
+    persistSession: true,         
+    detectSessionInUrl: true,
+    flowType: 'pkce',             
+  },
+});
 
 export default supabase
 

@@ -8,16 +8,20 @@ export const ProtectedRoute = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Verificar sesión actual al montar (Recuperar al refrescar F5)
     AuthService.getSession().then(({ data: { session } }) => {
       setSession(session);
-      setLoading(false);
+      if (!session) setLoading(false); 
     });
 
-    // 2. Escuchar cambios (Por si se loguea en otra pestaña o se le vence el token)
-    const subscription = AuthService.onAuthStateChange(() => {
-      setSession(session);
-      setLoading(false);
+    const  {data:{subscription}}  = AuthService.onAuthStateChange((event, session) => {
+      // Este evento se dispara cuando Supabase termina de leer el LocalStorage
+      if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        setSession(session);
+        setLoading(false);
+      } else if (event === 'SIGNED_OUT') {
+        setSession(null);
+        setLoading(false);
+      }
     });
 
     return () => subscription.unsubscribe();

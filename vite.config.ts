@@ -20,6 +20,8 @@ export default defineConfig({
         background_color: '#F5F5F0', // Color al abrir la app (splash screen)
         display: 'standalone', // <--- ESTO ELIMINA LA BARRA DE NAVEGACIÓN
         orientation: 'portrait',
+        start_url: '/',             // <--- ESTO ES CRÍTICO. Debe ser la raíz.
+        scope: '/',             
         
         icons: [
           {

@@ -1,3 +1,4 @@
+import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import supabase  from '../core/supabase';
 
 export const AuthService = {
@@ -21,9 +22,8 @@ export const AuthService = {
   getUser: async () => await supabase.auth.getUser(),
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onAuthStateChange: (callback: any) => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => callback(session));
-    return subscription
-  }
+  onAuthStateChange: (callback: (event: AuthChangeEvent, session: Session | null) => void) => {
+    return supabase.auth.onAuthStateChange(callback);
+  },
   
 };
