@@ -18,7 +18,7 @@ export const DashboardHeader = ({ userName }: HeaderProps) => {
       
       <div className="flex items-center gap-2">
         {/* Logo más compacto */}
-        <div className="font-black text-lg tracking-tighter uppercase border-2 border-foreground px-1 md:px-2">
+        <div onClick={()=>navigate('/app')} className="font-black text-lg tracking-tighter uppercase border-2 border-foreground px-1 md:px-2  hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-colors">
           TASK THIS.
         </div>
         <span className="font-mono text-sm md:text-[13px] uppercase opacity-60 mt-1">
