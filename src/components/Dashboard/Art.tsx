@@ -1,6 +1,6 @@
 export const Art = () => {
      return(
-          <div className="border-2 border-foreground min-h-80 md:min-w-40 md:max-w-80 shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900 md:-mb-5 md:mt-4" >
+          <div className="border-2 border-foreground h-65 md:w-70 shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900 md:mt-4" >
                {/* Imagen de fondo (URL Actualizada y Backup color) */}
                <img 
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
