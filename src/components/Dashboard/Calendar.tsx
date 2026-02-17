@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import { 
   format, 
@@ -12,15 +11,14 @@ import {
   addMonths, 
   subMonths,
   isToday,
-  parseISO,
   parse,
   startOfDay,
   isBefore
 } from 'date-fns';
 
 import { es } from 'date-fns/locale'; // Para español
-import { ChevronLeft, ChevronRight, CheckCircle2, Circle } from 'lucide-react';
-import { getConsistentPastelBg, getRandomPastelBg } from '../colors';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { getConsistentPastelBg } from '../colors';
 import type { CalendarEvent } from '../../core/types';
 import { isEventPast } from '../../core/utils';
 
@@ -42,7 +40,7 @@ export const ActivityCalendar = ({ events, currentMonth, onMonthChange }: Activi
   const calendarDays = eachDayOfInterval({ start: startDate, end: endDate });
 
   const nextMonth = () => onMonthChange(addMonths(currentMonth, 1));
-  const prevMonth = () => onMonthChange(subMonths(currentMonth, 1));
+    const prevMonth = () => onMonthChange(subMonths(currentMonth, 1));
 
   
 

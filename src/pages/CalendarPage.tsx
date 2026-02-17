@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// En Dashboard.tsx
 import { useEffect, useState } from 'react';
 import { ActivityCalendar } from '../components/Dashboard/Calendar';
 import type { CalendarEvent} from '../core/types';
-import { DashboardHeader } from '../components/Dashboard/Header';
-import { AuthService } from '../services/auth.service';
+// import { DashboardHeader } from '../components/Dashboard/Header';
 import { Clock } from '../components/Dashboard/Clock';
 import { EventFormWidget } from '../components/Dashboard/CreateEvent';
 import { EventService } from '../services/event.service';
@@ -14,8 +11,6 @@ export const CalendarPage = () =>{
 
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [events, setEvents] = useState<CalendarEvent[]>([]); 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     const fetchMonthData = async () => {
@@ -25,9 +20,7 @@ export const CalendarPage = () =>{
         const end = format(endOfMonth(currentMonth), 'yyyy-MM-dd');
         
         const data = await EventService.getByRange(start, end);
-        const { data: { user } } = await AuthService.getUser()
         console.log(data)
-        setUser(user)
         setEvents(data);
 
       } catch (error) {

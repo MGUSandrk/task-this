@@ -5,7 +5,7 @@ import { DashboardHeader } from './Dashboard/Header';
 export const AppLayout = () => {
   return (
     // 1. CONTENEDOR MAESTRO (Viewport)
-    <div className="w-full h-screen bg-background flex flex-col font-mono text-foreground overflow-hidden">
+    <div className="w-full h-screen bg-background flex flex-col font-mono text-foreground overflow-hidden ">
       
       {/* 2. HEADER (Full Width / Pegado arriba) */}
       <div className="w-full z-30 relative">
@@ -21,7 +21,8 @@ export const AppLayout = () => {
         </aside>
 
         {/* B. ÁREA DE CONTENIDO (Derecha) */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 scroll-smooth bg-background w-full -ml-10">
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 scroll-smooth bg-background w-full 
+                         md:-ml-30 2xl:-ml-10 overflow-auto">
           {/* Contenedor centralizado para pantallas muy anchas */}
           <div className="max-w-7xl mx-auto h-full">
             <Outlet />

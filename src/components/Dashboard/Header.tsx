@@ -14,7 +14,9 @@ export const DashboardHeader = ({ userName }: HeaderProps) => {
   };
 
   return (
-    <header className="w-full flex justify-between items-center border-b-2 border-foreground bg-background py-1 md:py-2 px-2 md:px-6 select-none">
+    <header className="w-full flex justify-between items-center border-b-2 border-foreground bg-background py-1 select-none
+                      2xl:py-2 px-2  
+                      ">
       
       <div className="flex items-center gap-2">
         {/* Logo más compacto */}
