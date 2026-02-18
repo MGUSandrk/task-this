@@ -5,10 +5,8 @@ import { Tasks } from '../components/Dashboard/Tasks';
 
 export const Dashboard = () => {
   return (
-    <div className="w-full min-h-screen bg-background flex flex-col font-mono text-foreground overflow-x-hidden transition-colors duration-300 ">
-
-      {/* LAYOUT PRINCIPAL: 3 COLUMNAS ASIMÉTRICAS */}
-      <div className="flex-1 px-3.5 md:p-4 pt-2 pb-13 md:py-2 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto w-full content-start">
+      <div className="flex-1 px-3.5 2xl:pt-2 max-sm:pb-13 grid grid-cols-1  gap-4 max-w-5xl mx-auto w-full content-start
+                      2xl:p-4 2xl:py-2 md:grid-cols-3 ">
         {/* 1. RELOJ (Focal Point - 2/3 ancho) */}
         <div className="md:col-span-2 md:relative md:mb-8 ">
           <div className="border-2 border-foreground px-4 shadow-[6px_6px_0px_0px_var(--foreground)] h-35 md:h-45
@@ -37,6 +35,5 @@ export const Dashboard = () => {
         </div>
 
       </div>
-    </div>
   );
 };
