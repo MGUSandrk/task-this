@@ -47,14 +47,7 @@ return (
         {/* Reloj */}
         <div className="md:col-span-2 md:relative md:mb-8 
                         max-2xl:hidden">
-              <div className="border-2 border-foreground px-4 shadow-[6px_6px_0px_0px_var(--foreground)] h-35 
-                              md:h-45 md:absolute md:right-2 md:bottom-2
-                              bg-background flex flex-col justify-center items-center overflow-hidden group transition-transform relative">
-                        <div className="absolute top-0 left-0 bg-foreground text-background text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
-                            System_Time
-                        </div>
                   <Clock />
-              </div>
         </div>
         <div className="w-full flex md:col-span-1">
          <EventFormWidget onSubmit={handleCreateEvent} />
