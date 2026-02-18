@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Layouts
-import { RootLayout } from './components/RootLayout';
+import { RootLayout } from './components/layouts/RootLayout';
 
 // Pages
 import { Landing } from './pages/Landing';
@@ -10,7 +10,7 @@ import { Signup } from './pages/auth/Signup';
 import { Dashboard } from './pages/Dashboard';
 import { ProtectedRoute } from './core/ProtectedRoute';
 import { CalendarPage } from './pages/CalendarPage';
-import { AppLayout } from './components/AppLayout';
+import { AppLayout } from './components/layouts/AppLayout';
 
 function App() {
 

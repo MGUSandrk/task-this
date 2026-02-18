@@ -17,7 +17,7 @@ export const SidebarNav = ({ className = '' }: SidebarNavProps) => {
   return (
     // CONTENEDOR PRINCIPAL: Un rectángulo vertical con borde grueso y sombra dura
     <nav className={`
-      fixed left-4 -translate-y-1/2 z-50
+      left-2 -translate-y-1/2 z-50
       flex flex-row sm:flex-col w-fit h-fit
       bg-background 
       border-2 border-foreground 

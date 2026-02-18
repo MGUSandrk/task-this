@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ActivityCalendar } from '../components/Dashboard/Calendar';
+import { ActivityCalendar } from '../components/dashboard/Calendar';
 import type { CalendarEvent} from '../core/types';
-import { Clock } from '../components/Dashboard/Clock';
-import { EventFormWidget } from '../components/Dashboard/CreateEvent';
+import { Clock } from '../components/dashboard/Clock';
+import { EventFormWidget } from '../components/dashboard/CreateEvent';
 import { EventService } from '../services/event.service';
 import { endOfMonth, format, startOfMonth } from 'date-fns';
-import { CalendarList } from '../components/Dashboard/CalendarList';
+import { CalendarList } from '../components/dashboard/CalendarList';
 
 export const CalendarPage = () =>{
 
@@ -40,9 +40,10 @@ export const CalendarPage = () =>{
       console.log("Creando evento:", data);
     };
 return (
-      <div className="flex-1 px-3.5 pt-2 pb-13  grid grid-cols-1  gap-4 max-w-6xl mx-auto w-full content-start
-                      md:max-2xl:grid-flow-col
-                      md:p-4 md:py-2 md:grid-cols-3">
+      <div className="flex-1 grid grid-cols-1 gap-4 max-w-6xl mx-auto w-full content-start
+                      px-3.5 pt-2 pb-13 
+                      md:p-4 md:py-2 md:grid-cols-3
+                      md:max-2xl:grid-flow-col">
         {/* Reloj */}
         <div className="md:col-span-2 md:relative md:mb-8 
                         max-2xl:hidden">

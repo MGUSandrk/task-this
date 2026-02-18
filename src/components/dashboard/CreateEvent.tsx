@@ -40,11 +40,7 @@ export const EventFormWidget = ({ className, onSubmit }: EventFormWidgetProps) =
   };
 
   return (
-<<<<<<< HEAD
     <div className={` border-2 border-foreground bg-background p-5 shadow-[6px_6px_0px_0px_var(--foreground)] xl:mt-4 h-65 2xl:w-70 ${className}`}>
-=======
-    <div className={`border-2 border-foreground bg-background p-5 shadow-[6px_6px_0px_0px_var(--foreground)] md:mt-4 h-65 w-70 ${className}`}>
->>>>>>> 0aaa89a56bc0f1d9062a0d2546824203cd3ec45e
       
       {/* HEADER */}
       <div className="flex justify-between items-end mb-1 border-b-2 border-foreground pb-1">
