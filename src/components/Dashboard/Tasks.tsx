@@ -57,7 +57,7 @@ export const Tasks = () => {
 
        return(
           <div className=" border-2 border-foreground px-6 pt-5 shadow-[6px_6px_0px_0px_var(--foreground)] bg-background flex flex-col 
-                        md:w-120 md:ml-20 md:mt-10 md:flex-1 md:relative h-fit md:min-h-70">
+                         h-fit ">
            <div className="flex justify-between items-end mb-3 border-b-2 border-foreground pb-2">
              <h2 className="text-3xl md:text-xl font-black uppercase tracking-tight">Tasks</h2>
              <span className="text-[10px] font-bold opacity-50 uppercase tracking-widest">JUST DO IT</span>
