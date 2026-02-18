@@ -1,6 +1,10 @@
 export const Art = () => {
      return(
+<<<<<<< HEAD
           <div className="border-2 border-foreground h-65 md:w-70 shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900 md:mt-4" >
+=======
+          <div className="border-2 border-foreground h-65 md:w-70 shadow-[6px_6px_0px_0px_var(--foreground)] relative group overflow-hidden bg-zinc-900 2xl:mt-4" >
+>>>>>>> 0aaa89a56bc0f1d9062a0d2546824203cd3ec45e
                {/* Imagen de fondo (URL Actualizada y Backup color) */}
                <img 
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 

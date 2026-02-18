@@ -19,18 +19,20 @@ export const Dashboard = () => {
         </div>
 
         {/* 2. ARTE + FRASE (Decorativo - 1/3 ancho) */}
-        <div className='md:col-span-1 '>
+        <div className='md:col-span-1 max-2xl:hidden'>
           <Art/>
         </div>
 
         {/* --- FILA 2 --- */}
        {/* 3. HÁBITOS */}
-        <div className=" md:col-span-1 h-fit">
+        <div className=" md:col-span-1 max-2xl:row-span-2 h-fit">
           <Habits/>
         </div>
 
         {/* 4. TAREAS */}
-        <div className='md:col-span-2'>
+        <div className='md:col-span-2 
+                        md:max-2xl:ml-35 md:max-2xl:mt-4
+                        md:w-120 2xl:ml-20 2xl:mt-10 md:flex-1 md:relative md:min-h-70'>
           <Tasks/>
         </div>
 

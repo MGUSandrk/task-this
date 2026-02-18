@@ -1,10 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// En Dashboard.tsx
 import { useEffect, useState } from 'react';
 import { ActivityCalendar } from '../components/Dashboard/Calendar';
 import type { CalendarEvent} from '../core/types';
-import { DashboardHeader } from '../components/Dashboard/Header';
-import { AuthService } from '../services/auth.service';
 import { Clock } from '../components/Dashboard/Clock';
 import { EventFormWidget } from '../components/Dashboard/CreateEvent';
 import { EventService } from '../services/event.service';
