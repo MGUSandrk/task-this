@@ -7,6 +7,7 @@
 ## 📋 Sobre el Proyecto
 
 **Task This** nace como una respuesta al ruido visual de las aplicaciones modernas. Inspirado en el **Brutalismo Digital** este proyecto busca ofrecer una interfaz donde la funcionalidad dicta la forma.
+
 [V1.0]
 El objetivo es simple: proveer un espacio digital limpio para gestionar tareas ("Just Do It") y construir hábitos consistentes ("Pls Keep"), utilizando una arquitectura de información basada en bloques flotantes y tipografía monoespaciada.
 
